@@ -125,7 +125,7 @@ Below is a snippet of the original VBA macro code:
    The refactored Macro code is as follows:
    
    ```
-       '1a) Create a ticker Index
+    '1a) Create a ticker Index
     Dim tickerIndex As Integer
     tickerIndex = 0
 
@@ -181,3 +181,7 @@ Below is a snippet of the original VBA macro code:
         
     Next i
 ```
+
+Both snippets contain the same functionality, but with the detection of the end of the ticker symbol data, the performance is improved by stopping the row-by-row processing, and moving onto the next ticker symbol.
+
+Additional performance improvements may also be possible by using a similar method to reduce processing for any rows above the desired ticker symbol.  If a larger data set is used, this may also be a valuable improvement.
